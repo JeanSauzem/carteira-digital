@@ -6,7 +6,9 @@
     "type": "project",
     "require": {
         "php": "^7.2.5",
+        "darkaonline/swagger-lume": "7.*",
         "laravel/lumen-framework": "^7.0",
+        "swagger-api/swagger-ui": "^3.52",
         "zircote/swagger-php": "^3.2"
     },
     "require-dev": {

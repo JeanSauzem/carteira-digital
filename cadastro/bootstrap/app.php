@@ -91,7 +91,9 @@ $app->configure('app');
 |
 */
 
+
 $app->register(App\Providers\AppServiceProvider::class);
+$app->register(\SwaggerLume\ServiceProvider::class);
 // $app->register(App\Providers\AuthServiceProvider::class);
 // $app->register(App\Providers\EventServiceProvider::class);
 
@@ -105,6 +107,7 @@ $app->register(App\Providers\AppServiceProvider::class);
 | can respond to, as well as the controllers that may handle them.
 |
 */
+$app->configure('swagger-lume');
 
 $app->router->group([
     'namespace' => 'App\Http\Controllers',

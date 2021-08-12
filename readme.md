@@ -15,8 +15,17 @@ Comando `docker-compose up -d --build`
 # 3 - Rodar Migration e Seed
 
 Comando `docker exec -it services_cadastro-service_1  php artisan migrate`
+
 Comando `docker exec -it services_cadastro-service_1  php artisan db:seed`
+
 Comando `docker exec -it services_movimentacao-service_1  php artisan migrate`
 
 # 4 - Rodar os testes
 Comando `docker exec -it services_cadastro-service_1  vendor/bin/phpunit`
+
+
+# Documentação
+
+Cadastro `http://localhost:8033/api/documentation`
+
+Movimentação `http://localhost:8034/api/documentation`
