@@ -15,7 +15,7 @@
                 "summary": "Create users",
                 "description": "Create users",
                 "requestBody": {
-                    "description": "Paramaters create Users",
+                    "description": "Paramaters create users",
                     "required": true,
                     "content": {
                         "application/json": {

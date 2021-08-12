@@ -22,7 +22,7 @@ class Controller extends BaseController
      *    summary="Create users",
      *     description="Create users",
      *     @OA\RequestBody(
-     *         description="Paramaters create Users",
+     *         description="Paramaters create users",
      *         required=true,
      *         @OA\MediaType(
      *             mediaType="application/json",
