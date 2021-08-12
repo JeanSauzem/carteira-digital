@@ -2,15 +2,15 @@
 /**
  * @OA\Swagger(
  *     schemes={"http"},
- *     host=API_HOST,
+ *     host='http://175.211.0.1:8033',
  *     basePath="/",
  *     @OA\Info(
  *         version="1.0.0",
- *         title="Laravel and Swagger",
+ *         title="Cadastro",
  *         description="Getting started with Laravel and Swagger",
  *         termsOfService="",
  *         @OA\Contact(
- *             email="name@tecgenius.com"
+ *             email="jsauzem@gmail.com"
  *         ),
  *     ),
  * )

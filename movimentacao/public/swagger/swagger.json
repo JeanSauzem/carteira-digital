@@ -1,0 +1,93 @@
+{
+    "openapi": "3.0.0",
+    "paths": {
+        "/transaction/deposit": {
+            "post": {
+                "summary": "User deposit Wallet",
+                "description": "User deposit Wallet",
+                "requestBody": {
+                    "description": "Paramaters deposit Wallet",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/depositWallet"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Deposit Wallet with Success"
+                    },
+                    "400": {
+                        "description": "fail! deposit Wallet"
+                    }
+                }
+            }
+        },
+        "/transaction": {
+            "post": {
+                "summary": "Transfer value at users",
+                "description": "Transfer value at users",
+                "requestBody": {
+                    "description": "Paramaters Transfer value",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/transferWallet"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "tranfers Wallet with Success"
+                    },
+                    "400": {
+                        "description": "fail! tranfers Wallet"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "depositWallet": {
+                "required": [
+                    "users_id",
+                    "value"
+                ],
+                "properties": {
+                    "users_id": {
+                        "type": "integer"
+                    },
+                    "value": {
+                        "type": "integer"
+                    }
+                },
+                "type": "object"
+            },
+            "transferWallet": {
+                "required": [
+                    "source_user",
+                    "destination_user",
+                    "value"
+                ],
+                "properties": {
+                    "source_user": {
+                        "type": "integer"
+                    },
+                    "destination_user": {
+                        "type": "integer"
+                    },
+                    "value": {
+                        "type": "integer"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    }
+}

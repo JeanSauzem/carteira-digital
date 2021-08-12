@@ -14,15 +14,7 @@ class UserController extends Controller
     {
         $this->createUserFacades = $createUserFacades;
     }
-    /**
-     * @OA\Post(
-     *     path="/register/user",
-     *     description="Create users",
-     *     @OA\Response(response="201", description="A list with users"),
-     *     @OA\Response(response="400", description="fail! create users"),
-     * )
-     * 
-    */
+    
     public function create(Request $request)
     {
         try {

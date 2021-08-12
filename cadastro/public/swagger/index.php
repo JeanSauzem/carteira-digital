@@ -33,14 +33,14 @@
 
   <body>
     <div id="swagger-ui"></div>
-    <script src="/dist/swagger-ui-bundle.js"> </script>
-    <script src="/dist/swagger-ui-standalone-preset.js"> </script>
+    <script src="https://unpkg.com/swagger-ui-dist@3.12.1/swagger-ui-standalone-preset.js"></script>
+    <script src="https://unpkg.com/swagger-ui-dist@3.12.1/swagger-ui-bundle.js"></script>
     <script>
     window.onload = function() {
 
       // Build a system
       const ui = SwaggerUIBundle({
-        url: url = window.location.protocol + "//" + window.location.hostname + ":" + window.location.port + "/dist/swagger.json",
+        url: url ="http://175.211.0.1:8083/dist/swagger.json",
         dom_id: '#swagger-ui',
         deepLinking: true,
         presets: [

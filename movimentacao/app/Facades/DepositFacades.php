@@ -24,8 +24,9 @@ class DepositFacades implements DepositContract
             throw new Exception('User not found');
         }
 
-        return DB::transaction(function() use ($params) {
-            $updateWallet = $this->walletRepository->depositWallet($params['value'], $params['users_id']);
+        return DB::transaction(function() use ($params, $user) {
+            $valueDeposit = $params['value'] + $user[0]->value;
+            $updateWallet = $this->walletRepository->depositWallet($valueDeposit, $params['users_id']);
             if (!$updateWallet) {
                 throw new Exception('Wallet User not found');
             }
