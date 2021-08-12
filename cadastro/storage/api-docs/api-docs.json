@@ -1,7 +1,7 @@
 {
     "openapi": "3.0.0",
     "info": {
-        "title": "My the best API",
+        "title": "Register API",
         "version": "1.0.0"
     },
     "servers": [
@@ -10,7 +10,7 @@
         }
     ],
     "paths": {
-        "/register/user": {
+        "/register/users": {
             "post": {
                 "summary": "Create users",
                 "description": "Create users",
