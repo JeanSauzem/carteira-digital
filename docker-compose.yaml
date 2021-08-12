@@ -1,0 +1,55 @@
+version: '3'
+
+services:
+
+  postgres:
+    image: postgres:9.6.22-alpine3.14
+    environment:
+      POSTGRES_PASSWORD: "Postgres2019!"
+    ports:
+      - "5433:5432"
+    volumes:
+      - ./data:/var/lib/postgresql/data 
+    networks:
+      - service-transacao
+
+  cadastro-service:
+    build: 
+       context: .docker/php
+    ports:
+      - "8033:8080"
+    volumes:
+      - ./cadastro:/var/www/html
+    networks:
+      - service-transacao
+    links:
+      - postgres
+
+  movimentacao-service:
+    build: 
+       context: .docker/php
+    ports:
+      - "8034:8080"
+    volumes:
+      - ./movimentacao:/var/www/html
+    networks:
+      - service-transacao
+    links:
+      - postgres
+
+  api-gateway:
+    build: 
+       context: .docker/gateway
+    ports:
+      - "7000:80"
+    networks:
+      - service-transacao
+    links:
+      - movimentacao-service
+      - cadastro-service
+
+networks: 
+  service-transacao:
+    ipam:
+      config:
+        - subnet: 175.211.0.0/16

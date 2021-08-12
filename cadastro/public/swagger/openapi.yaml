@@ -1,0 +1,18 @@
+openapi: 3.0.0
+info:
+  title: 'Laravel and Swagger'
+  description: 'Getting started with Laravel and Swagger'
+  termsOfService: ''
+  contact:
+    email: name@tecgenius.com
+  version: 1.0.0
+paths:
+  /register/user:
+    post:
+      description: 'Create users'
+      operationId: 29b5e08a5c810ed119115b391a33dd88
+      responses:
+        '201':
+          description: 'A list with users'
+        '400':
+          description: 'fail! create users'
