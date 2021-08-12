@@ -15,4 +15,9 @@ class Users extends Model
         'password',
         'type_users_id'
     ];
+
+    public function setPasswordAttribute($value)
+    {
+        $this->attributes['password'] = md5($value);
+    }
 }
